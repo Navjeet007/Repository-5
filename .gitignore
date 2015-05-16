@@ -1,12 +1,117 @@
-*.class
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+public class Date
+{
+private int Month;
+private int Day;
+private int Year;
+public Date(int M,int D, int Y)
+{
+	if(M<=12&&M>0)
+	{
+		Month=M;
+	}
+	else
+	{
+		System.out.println("Invalid Month");
+	}
+	if (D>0&&D<=30)
+	{
+		Day=D;
+	}
+	else
+	{
+		System.out.println("Invalid Day");
+	}
+	if (Y>0&&Y<=2015)
+	{
+		Year=Y;
+	}
+	else
+	{
+		System.out.println("Year doesn't Exist");
+	}
+}
+public void setMonth(int M)
+{
+	if(M<=12&&M>0)
+	{
+		Month=M;
+	}
+	else
+	{
+		System.out.println("Invalid Month");
+	}
+}
+public int getMonth()
+{
+	return Month;
+}
+public void setDay(int D)
+{
+	if (D>0&&D<=30)
+	{
+		Day=D;
+	}
+	else
+	{
+		System.out.println("Invalid Day");
+	}
+}
+public int getDay()
+{
+	return Day;
+}
+public void setYear(int Y)
+{
+	if (Y>0&&Y<=2015)
+	{
+		Year=Y;
+	}
+	else
+	{
+		System.out.println("Year doesn't Exist");
+	}	
+}
+public int getYear()
+{
+	return Year;
+}
+public void getdisplayDate(int Month, int Day, int Year)
+{
+	System.out.println (Month+"/"+Day+"/"+Year);
+}
 
-# Package Files #
-*.jar
-*.war
-*.ear
+}
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+//Test Program
+
+import java.util.Scanner;
+public class DateTest 
+{
+public static void main (String args[])
+{
+	Scanner input=new Scanner (System.in);
+	int month=1;
+	int day=1;
+	int year=1;
+	Date date=new Date (month,day, year);
+	System. out.print("Enter Month: ");
+	month=input.nextInt();
+	date.setMonth(month);
+	System. out.print("Enter Day: ");
+	day=input.nextInt();
+	date.setDay(day);
+	System. out.print("Enter Year: ");
+	year=input.nextInt();
+	date.setYear(year);
+	System.out.printf("Month is : %s\n",
+			date.getMonth());
+	System.out.printf("Day is : %s\n",
+			date.getDay());
+	System.out.printf("Year is : %s\n",
+			date.getYear());
+	System. out.printf("Displaying the Date:%s\n",date.getMonth()+"/"+date.getDay()+"/"+date.getYear());
+	
+}
+}
+
